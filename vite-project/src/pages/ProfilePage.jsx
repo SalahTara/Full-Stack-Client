@@ -16,14 +16,14 @@ function ProfilePage() {
   useEffect(() => {
     axios
       .get(
-        `https://full-stack-api-posts-app-8d7221af6ca5.herokuapp.com/auth/basicinfo/${id}`
+        `https://full-stack-server-salaheddin-0e99fd015aab.herokuapp.com/auth/basicinfo/${id}`
       )
       .then((response) => {
         setUsername(response.data.username);
       });
     axios
       .get(
-        `https://full-stack-api-posts-app-8d7221af6ca5.herokuapp.com/posts/byUserId/${id}`
+        `https://full-stack-server-salaheddin-0e99fd015aab.herokuapp.com/posts/byUserId/${id}`
       )
       .then((response) => {
         setListOfPosts(response.data);

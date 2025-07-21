@@ -35,7 +35,7 @@ function Home() {
   const likeAPost = (postId) => {
     axios
       .post(
-        "https://full-stack-api-posts-app-8d7221af6ca5.herokuapp.com/likes",
+        "https://full-stack-server-salaheddin-0e99fd015aab.herokuapp.com/likes",
         { PostId: postId },
         { headers: { accessToken: localStorage.getItem("accessToken") } }
       )

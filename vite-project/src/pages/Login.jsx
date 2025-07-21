@@ -14,7 +14,7 @@ function Login() {
     const data = { username: username, password: password };
     axios
       .post(
-        "https://full-stack-api-posts-app-8d7221af6ca5.herokuapp.com/auth/login",
+        "https://full-stack-server-salaheddin-0e99fd015aab.herokuapp.com/auth/login",
         data
       )
       .then((response) => {

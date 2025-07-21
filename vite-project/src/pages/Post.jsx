@@ -14,17 +14,29 @@ function Post() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`https://full-stack-api-posts-app-8d7221af6ca5.herokuapp.com/posts/byId/${id}`).then((response) => {
-      setPostObject(response.data);
-    });
+    axios
+      .get(
+        `https://full-stack-server-salaheddin-0e99fd015aab.herokuapp.com/posts/byId/${id}`
+      )
+      .then((response) => {
+        setPostObject(response.data);
+      });
 
-    axios.get(`https://full-stack-api-posts-app-8d7221af6ca5.herokuapp.com/comments/${id}`).then((response) => {
-      setComments(response.data);
-    });
+    axios
+      .get(
+        `https://full-stack-server-salaheddin-0e99fd015aab.herokuapp.com/comments/${id}`
+      )
+      .then((response) => {
+        setComments(response.data);
+      });
 
-    axios.get(`https://full-stack-api-posts-app-8d7221af6ca5.herokuapp.com/posts/${id}`).then((response) => {
-      setListOfPosts(response.data);
-    });
+    axios
+      .get(
+        `https://full-stack-server-salaheddin-0e99fd015aab.herokuapp.com/posts/${id}`
+      )
+      .then((response) => {
+        setListOfPosts(response.data);
+      });
   }, []);
 
   const addComment = () => {
