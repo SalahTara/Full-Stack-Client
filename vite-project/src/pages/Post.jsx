@@ -42,7 +42,7 @@ function Post() {
   const addComment = () => {
     axios
       .post(
-        "http://localhost:3001/comments",
+        "https://full-stack-server-salaheddin-0e99fd015aab.herokuapp.com/comments",
         {
           commentBody: newComment,
           PostId: id,
@@ -69,9 +69,12 @@ function Post() {
   };
   const deleteComment = (id) => {
     axios
-      .delete(`http://localhost:3001/comments/${id}`, {
-        headers: { accessToken: localStorage.getItem("accessToken") },
-      })
+      .delete(
+        `https://full-stack-server-salaheddin-0e99fd015aab.herokuapp.com/comments/${id}`,
+        {
+          headers: { accessToken: localStorage.getItem("accessToken") },
+        }
+      )
       .then(() => {
         setComments(
           comments.filter((val) => {
@@ -83,9 +86,12 @@ function Post() {
 
   const deletePost = (id) => {
     axios
-      .delete(`http://localhost:3001/posts/${id}`, {
-        headers: { accessToken: localStorage.getItem("accessToken") },
-      })
+      .delete(
+        `https://full-stack-server-salaheddin-0e99fd015aab.herokuapp.com/posts/${id}`,
+        {
+          headers: { accessToken: localStorage.getItem("accessToken") },
+        }
+      )
       .then(() => {
         setPostObject({});
         setListOfPosts(
@@ -103,7 +109,7 @@ function Post() {
     if (option === "title") {
       newTitle = prompt("Enter New Title: ");
       axios.put(
-        "http://localhost:3001/posts/title",
+        "https://full-stack-server-salaheddin-0e99fd015aab.herokuapp.com/posts/title",
         {
           newTitle: newTitle,
           id: id,
@@ -114,7 +120,7 @@ function Post() {
     } else {
       newBody = prompt("Enter New Text");
       axios.put(
-        "http://localhost:3001/posts/body",
+        "https://full-stack-server-salaheddin-0e99fd015aab.herokuapp.com/posts/body",
         {
           newBody: newBody,
           id: id,
