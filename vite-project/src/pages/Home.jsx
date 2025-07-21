@@ -17,9 +17,12 @@ function Home() {
         navigate("/login");
       } else {
         try {
-          const response = await axios.get("https://full-stack-api-posts-app-8d7221af6ca5.herokuapp.com/posts", {
-            headers: { accessToken: localStorage.getItem("accessToken") },
-          });
+          const response = await axios.get(
+            "https://full-stack-server-salaheddin-0e99fd015aab.herokuapp.com/posts",
+            {
+              headers: { accessToken: localStorage.getItem("accessToken") },
+            }
+          );
 
           setListOfPosts(response.data.listOfPosts);
           setLikedPosts(response.data.likedPosts.map((like) => like.PostId));
