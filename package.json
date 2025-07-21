@@ -4,5 +4,8 @@
     "formik": "^2.4.6",
     "react-router-dom": "^7.6.2",
     "yup": "^1.6.1"
+  },
+  "scripts": {
+    "build": "react-scripts build"
   }
 }
